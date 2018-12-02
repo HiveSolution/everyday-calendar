@@ -1,38 +1,52 @@
-<!-- The content below is only a placeholder and can be replaced. -->
-<div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
-  <img
-    width="300"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+      <button class="mdc-button" (click)="toggleDialog()">About</button>
+      <h1 class="mdc-typography--headline4 cd-layout--text__center">
+        I want to
+        <div appMdcInit class="mdc-text-field cd-layout--title-input">
+          <input type="text" id="my-text-field" class="mdc-text-field__input" [(ngModel)]="task" />
+          <div class="mdc-line-ripple"></div>
+        </div>
+        every day
+      </h1>
+    </div>
+    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1" *ngFor="let month of months">
+      <app-month [month]="month"></app-month>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start:</h2>
-<ul>
-  <li>
-    <h2>
-      <a target="_blank" rel="noopener" href="https://angular.io/tutorial"
-        >Tour of Heroes</a
-      >
-    </h2>
-  </li>
-  <li>
-    <h2>
-      <a
-        target="_blank"
-        rel="noopener"
-        href="https://github.com/angular/angular-cli/wiki"
-        >CLI Documentation</a
-      >
-    </h2>
-  </li>
-  <li>
-    <h2>
-      <a target="_blank" rel="noopener" href="https://blog.angular.io/"
-        >Angular blog</a
-      >
-    </h2>
-  </li>
-</ul>
 
-<button class="mdc-button mdc-button--raised">Test</button>
+<div
+  class="mdc-dialog"
+  role="alertdialog"
+  aria-modal="true"
+  aria-labelledby="my-dialog-title"
+  aria-describedby="my-dialog-content"
+>
+  <div class="mdc-dialog__container">
+    <div class="mdc-dialog__surface">
+      <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+      <h2 class="mdc-dialog__title" id="my-dialog-title">
+        <!--
+        -->The "Every Day Calendar"<!---->
+      </h2>
+      <div class="mdc-dialog__content" id="my-dialog-content">
+        <p>
+          An idea by
+          <a href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ">"Simone Giertz"</a>.
+        </p>
+        <p>
+          Web version created by
+          <a href="https://github.com/HiveSolution">"RenokK/HiveSolution"</a>.
+        </p>
+        <p>
+          You can find the project on
+          <a href="https://github.com/HiveSolution/everyday-calendar">Github</a>.<br />
+          Feel free to fork/clone the project and change everything you want.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="mdc-dialog__scrim"></div>
+</div>

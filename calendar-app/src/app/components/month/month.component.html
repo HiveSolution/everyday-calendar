@@ -1,0 +1,9 @@
+<p class="cd-layout--text__center">{{ month.title }}</p>
+<ng-container *ngFor="let day of generateDayArray(month.days)">
+  <div class="cd-day--wrapper" [ngClass]="{ active: currentState ? currentState[day] : false }">
+    <div class="cd-day--element" (click)="toggleCompletion(month.title, day)">
+      <p>{{ day }}</p>
+    </div>
+    <div class="cd-day--background"></div>
+  </div>
+</ng-container>

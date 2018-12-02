@@ -1,0 +1,103 @@
+// .cd-day--wrapper {
+//   background-color: gold;
+// }
+
+@import '../../core/scss/material/mdc-theme';
+
+.cd-day {
+  &--wrapper {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &.active {
+      p {
+        color: $mdc-theme-on-primary !important;
+      }
+
+      .cd-day--background {
+        background-color: $mdc-theme-primary !important;
+        &:before {
+          border-bottom: 11.55px solid $mdc-theme-primary !important;
+        }
+
+        &:after {
+          border-top: 11.55px solid $mdc-theme-primary !important;
+        }
+      }
+    }
+  }
+  &--element {
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    height: 28.86px;
+    background-color: $mdc-theme-primary;
+    margin: 14.43px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+    }
+
+    &:before {
+      bottom: 100%;
+      border-bottom: 14.43px solid $mdc-theme-primary;
+    }
+
+    &:after {
+      top: 100%;
+      width: 0;
+      border-top: 14.43px solid $mdc-theme-primary;
+    }
+
+    p {
+      pointer-events: none;
+      margin: 0;
+      z-index: 2;
+      color: $mdc-theme-on-background;
+    }
+  }
+
+  &--background {
+    pointer-events: none;
+    z-index: 1;
+    position: absolute;
+    width: 40px;
+    height: 23.09px;
+    background-color: $mdc-theme-background;
+    margin: 11.55px 0;
+    top: calc(50% - 23px);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+    }
+
+    &:before {
+      bottom: 100%;
+      border-bottom: 11.55px solid $mdc-theme-background;
+    }
+
+    &:after {
+      top: 100%;
+      width: 0;
+      border-top: 11.55px solid $mdc-theme-background;
+    }
+  }
+}
+
+// $mdc-theme-primary: #ffcf44;
+// $mdc-theme-on-primary: #33333d;

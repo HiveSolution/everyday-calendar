@@ -1,6 +1,26 @@
-@import "material/mdc";
+@import 'material/mdc';
 
 html {
   background-color: $mdc-theme-background;
   color: $mdc-theme-on-background;
+}
+
+.cd-layout--text__center {
+  text-align: center;
+}
+
+.cd-layout--title-input {
+  input {
+    font-size: 2.125rem !important;
+    text-align: center !important;
+  }
+}
+
+a {
+  color: $mdc-theme-on-background;
+  font-weight: 600;
+
+  &:visited {
+    color: darken($mdc-theme-on-background, 15%);
+  }
 }
